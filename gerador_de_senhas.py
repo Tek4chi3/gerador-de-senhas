@@ -1,8 +1,7 @@
 #Gerador de senhas
 
 import string
-import random
-from random import randint
+from random import randint,choice
 senha=[]
 senha3=[]
 print('='*40)
@@ -22,7 +21,7 @@ if escolha==1:
             break
 if escolha==2:
     while len(senha)!=caracteres:
-        senha.append(chr(random.randint(ord('a'), ord('z'))))
+        senha.append(chr(randint(ord('a'), ord('z'))))
         if len(senha)==caracteres:
             print('Sua senha é:',end=' ')
             for c in range(0,len(senha)):
@@ -30,9 +29,9 @@ if escolha==2:
             break
 if escolha==3:
     while len(senha)!=caracteres:
-        senha3.append(chr(random.randint(ord('a'), ord('z'))))
+        senha3.append(chr(randint(ord('a'), ord('z'))))
         senha3.append(randint(0, 9))
-        senha.append(random.choice(senha3))
+        senha.append(choice(senha3))
         senha3.clear()
         if len(senha)==caracteres:
             print('Sua senha é:',end=' ')
